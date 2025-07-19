@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GM Auto Booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <img src="/static/logo.png" alt="GM Logo" class="logo">
+    <h1>Book a Service</h1>
+    <form method="POST">
+        <input name="name" placeholder="Full Name" required>
+        <input name="phone" placeholder="Phone Number" required>
+        <input name="postcode" placeholder="Postcode" required>
+        <select name="service" required>
+            <option value="">Select Service</option>
+            <option value="exterior">Exterior Detail</option>
+            <option value="standard">Standard Membership</option>
+            <option value="full">Full Detail</option>
+            <option value="premium">Premium Membership</option>
+        </select>
+        <button type="submit">Next</button>
+    </form>
+</div>
+</body>
+</html>

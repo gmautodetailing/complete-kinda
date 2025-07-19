@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Time</title>
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h2>Select a Time Slot</h2>
+    <form action="/book" method="POST">
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="phone" value="{{ phone }}">
+        <input type="hidden" name="postcode" value="{{ postcode }}">
+        <input type="hidden" name="service" value="{{ service }}">
+        {% for slot in slots %}
+            <button type="submit" name="slot" value="{{ slot.date }} {{ slot.time }}"
+            {% if not slot.available %}disabled class="disabled"{% endif %}>
+                {{ slot.date }} – {{ slot.time }}
+            </button>
+        {% endfor %}
+    </form>
+</div>
+</body>
+</html>
